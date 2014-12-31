@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 	validates_format_of :email, :with => /@/
 	validates :first, presence: true
 	validates :last, presence: true
+
 	
 	has_secure_password
 end

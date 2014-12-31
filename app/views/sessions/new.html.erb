@@ -2,6 +2,7 @@
   <div class="col-md-6 col-md-offset-3">
     <h1 class="text-center">Log in</h1>
     <%= form_for(:session, class: 'form-horizontal', url: login_path) do |f| %>
+    <%= notice %>
       <div class="form-group">
         <%= f.label :email %>
         <%= f.text_field :email, class: 'form-control' %>
@@ -12,7 +13,7 @@
       </div>
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
-
+    <br>
     <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   </div>
 </div>
