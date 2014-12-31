@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container-fluid">
+<% if logged_in? %>
+	<!-- Nav bar up top with specific links --> 
+	<%= link_to "Log out", logout_path, method: "delete" %>
+<% else %>
+	<!-- Simple centered logo above form -->
 
+<% end %>
 <%= yield %>
+
+</div>
 
 </body>
 </html>

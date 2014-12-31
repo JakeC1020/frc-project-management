@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
 		log_in user
-      	redirect_to user
+    redirect_to users_path
     else
     	render "new", notice: 'Email/Password were not correct. Please try again.'
     end
