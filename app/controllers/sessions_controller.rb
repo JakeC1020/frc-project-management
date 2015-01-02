@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
 		log_in user
     redirect_to users_path
     else
-    	render "new", notice: 'Email/Password were not correct. Please try again.'
+      flash.now[:danger] = "Email/Password combination is not correct. Please try again."
+    	render "new"
     end
   end
 

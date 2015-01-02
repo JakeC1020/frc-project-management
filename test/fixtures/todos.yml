@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyText
+  due: 2014-12-31
+  done: false
+  user_id: 
+
+two:
+  task: MyText
+  due: 2014-12-31
+  done: false
+  user_id: 
