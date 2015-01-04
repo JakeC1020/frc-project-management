@@ -1,7 +1,0 @@
-<%= todo.task %><%= link_to edit_todo_path(todo), remote: true do %>
-    <button>Edit</button>
-  <% end %>
-  <%= link_to todo, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
-  	<button>Delete!</button>
-	<% end %>
-  <br><br><br>

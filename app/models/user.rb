@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	validates :first, presence: true
 	validates :last, presence: true
 
-	has_many :todos
+	has_many :todos, dependent: :destroy
 	
 	has_secure_password
 end
