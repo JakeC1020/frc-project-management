@@ -38,5 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Encription for passwords
+# Encryption for passwords
 gem 'bcrypt', '3.1.7'
+
+# Use Font-Awesome Icons
+gem "font-awesome-rails"

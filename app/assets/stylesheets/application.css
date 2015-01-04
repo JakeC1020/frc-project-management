@@ -11,6 +11,11 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+a i:hover {
+	text-decoration: none;
+}

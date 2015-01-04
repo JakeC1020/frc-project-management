@@ -1,0 +1,15 @@
+<% current_user.todos.each do |todo| %>
+<div class="panel panel-default col-md-12">
+	<div class="panel-body">
+		<%= todo.task %>
+		<div class="pull-right">
+			<%= link_to edit_todo_path(todo), remote: true do %>
+			    <i class="fa fa-pencil fa-lg"></i>
+		  <% end %>
+		  <%= link_to todo, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
+		  	<i class="fa fa-trash fa-lg"></i>
+			<% end %>
+		</div>
+	</div>
+</div>
+<% end %>
