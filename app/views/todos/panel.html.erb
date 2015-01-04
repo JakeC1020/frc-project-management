@@ -1,9 +1,45 @@
 <div class="row">
-	<div class="col-md-6 panel panel-default">
-		
+	<div class="col-md-5 panel panel-default">
+		<!-- CURRENT TODOS -->
+		<div class="panel-heading row">
+			<h2><%= link_to "Todo List", todos_path, class: "col-md-10"%></h2>
+			<h2><%= link_to new_todo_path, remote: true do %>
+				<i class="fa-plus-square fa   col-md-2"></i>
+			<% end %></h2>
+	  </div>
+		<div class="panel-body">
+			<div id="todo-form" style="display:none;"><br></div>
+			<div id="todos">
+				<%= render 'todo' %>
+			</div>
+		</div>
 	</div>
 
-	<div class="col-md-6 panel panel-default">
-		
+	<div class="col-md-5 col-md-offset-2 panel panel-default">
+		<!-- CALENDAR INTEGRATION -->
+		<div class="panel-body">
+			
+		</div>
 	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-5 panel panel-default">
+	<!-- COMPLETED TODOS -->
+		<div class="panel-heading row">
+			<h2><%= link_to "Finished Todos", todos_path, class: "col-md-12"%></h2>
+		</div>
+		<div class="panel-body">
+			<div id="donetodos">
+				<%= render 'donetodo' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5 col-md-offset-2 panel panel-default">
+		<!-- EMPTY SLOT -->
+		<div class="panel-body">
+			
+		</div>
+	</div>
+
 </div>

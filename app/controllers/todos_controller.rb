@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
-	before_action :all_todos, only: [:index, :create, :update, :destroy]
-	before_action :set_todos, only: [:edit, :update, :destroy]
+	before_action :all_todos, only: [:index, :create, :update, :toggle, :destroy]
+	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
 	before_action :logged_in_user
 	respond_to :html, :js
 
@@ -41,6 +41,6 @@ class TodosController < ApplicationController
     end
 
 		def todo_params
-			params.require(:todo).permit(:task, :due)			
+			params.require(:todo).permit(:task, :due, :done)			
 		end
 end

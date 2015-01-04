@@ -19,3 +19,7 @@
 a i:hover {
 	text-decoration: none;
 }
+
+.logo {
+	height: 100%;
+}

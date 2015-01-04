@@ -1,15 +1,15 @@
-<%= form_for @todo, :html => {:class => "form-inline"}, remote: true do |f|   %>
+<%= form_for @todo, :html => {:class => "form-horizontal"}, remote: true do |f|   %>
 
 
 	<div class="form-group">
 		<%= f.label :task, "Task:" %>
   	<%= f.text_field :task, class: "form-control" %>
   </div>
-	&nbsp;
 	<div class="form-group">
 		<%= f.label :due, "Due date:" %>
   	<%= f.text_field :due, class: "form-control" %>
   </div>
-
-  	<%= f.submit "Submit", class: "btn btn-default" %>
+	<div class="form-group">
+  	<%= f.submit "Submit", class: "btn btn-primary " %>
+  </div>
 <% end %>

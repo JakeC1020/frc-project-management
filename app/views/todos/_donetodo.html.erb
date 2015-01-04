@@ -1,8 +1,8 @@
 <% current_user.todos.each do |todo| %>
-	<% unless todo.done? %>
+	<% if todo.done? %>
 	<div class="panel panel-default col-md-12">
 		<div class="panel-body">
-		<a href="#"><i class="fa fa-square-o fa-lg un-checked" id="<%= todo.id %>"></i></a> &nbsp;
+		<a href="#"><i class="fa fa-check-square-o fa-lg checked" id="<%= todo.id %>"></i></a> &nbsp;
 			<%= todo.task %>
 			<div class="pull-right">
 				<%= link_to edit_todo_path(todo), remote: true do %>
