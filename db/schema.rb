@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231214413) do
+ActiveRecord::Schema.define(version: 20150108183112) do
 
   create_table "todos", force: true do |t|
     t.text     "task"
     t.date     "due"
-    t.boolean  "done"
+    t.boolean  "done",       default: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141231214413) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
+    t.boolean  "admin",           default: false
   end
 
 end

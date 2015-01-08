@@ -9,10 +9,19 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
+  # Rename default session routes
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+
+  # Todo Admin routes
+  get 'past' => 'todos#past'
+
+
+  # Other Todo routes
   get 'todos/panel'
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
