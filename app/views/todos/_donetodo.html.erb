@@ -4,6 +4,7 @@
 		<div class="panel-body">
 		<a href="#"><i class="fa fa-check-square-o fa-lg checked" id="<%= todo.id %>"></i></a> &nbsp;
 			<%= todo.task %>
+			<%= todo.due.strftime("%m/%d/%Y") %>
 			<div class="pull-right">
 				<%= link_to edit_todo_path(todo), remote: true do %>
 				    <i class="fa fa-pencil fa-lg"></i>

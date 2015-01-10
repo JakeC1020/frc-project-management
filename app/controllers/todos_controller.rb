@@ -13,7 +13,7 @@ class TodosController < ApplicationController
 			@todos = current_user.todos
 		end
 	end
-
+=begin
 	# Admin Functions
 
 	def past
@@ -30,12 +30,12 @@ class TodosController < ApplicationController
 		# location to assign todos 
 
 	end
-
+=end
 	# CRUD Actions
 
 	def new
 		# Ajax function
-		@todo = Todo.new		
+		@todo = Todo.new
 	end
 
 	def create
