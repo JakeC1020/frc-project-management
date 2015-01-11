@@ -17,7 +17,7 @@
 ###############################################################################################
 .bundle/*
 !.bundle/config
-
+config/secrets.yml
 config/application.yml
 .vagrant
 .tags

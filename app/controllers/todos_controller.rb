@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-	before_action :all_todos, only: [:index, :create, :update, :destroy]
+	before_action :all_todos, only: [:create, :update, :destroy, :panel]
 	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
 	before_action :logged_in_user
 	before_action :admin_user, only: [:past, :index, :assign]
@@ -7,11 +7,7 @@ class TodosController < ApplicationController
 
 	def panel 
 		# Main View for all users
-		if current_user.admin?
-			@todos = Todo.all
-		else
-			@todos = current_user.todos
-		end
+		
 	end
 =begin
 	# Admin Functions
@@ -55,7 +51,11 @@ class TodosController < ApplicationController
 
 	private 
 		def all_todos
-			@todos = Todo.all
+			if current_user.admin?
+				@todos = Todo.all
+			else
+				@todos = current_user.todos
+			end
 		end
 
 		def set_todos

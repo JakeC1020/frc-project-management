@@ -5,9 +5,10 @@
 		<a href="#"><i class="fa fa-square-o fa-lg un-checked" id="<%= todo.id %>"></i></a> &nbsp;
 			<%= todo.task %>
 			<% if past_due(todo.due) then style = "text-danger" elsif is_due(todo.due) then style = "text-warning" else style="text-primary" end %>
-			<span class="<%= style %>"><%= todo.due.strftime("%m/%d/%Y") %></span>
+			
 
 			<div class="pull-right">
+			<span class="<%= style %>"><%= todo.due.strftime("%m/%d/%Y") %></span> &nbsp;
 				<%= link_to edit_todo_path(todo), remote: true do %>
 				    <i class="fa fa-pencil fa-lg"></i>
 			  <% end %>
