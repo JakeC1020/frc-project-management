@@ -1,7 +1,8 @@
 class TodosController < ApplicationController
+	before_action :logged_in_user
 	before_action :all_todos, only: [:index, :create, :update, :destroy, :panel]
 	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
-	before_action :logged_in_user
+
 	before_action :admin_user, only: [:past, :index, :assign]
 	respond_to :html, :js
 

@@ -23,3 +23,7 @@ a i:hover {
 .logo {
 	height: 100%;
 }
+
+.panel i, .panel span {
+	margin: 0 5px;
+}
