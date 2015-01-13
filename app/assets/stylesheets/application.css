@@ -27,3 +27,11 @@ a i:hover {
 .panel i, .panel span {
 	margin: 0 5px;
 }
+
+.panel-body {
+    padding: 15px 0 0;
+}
+
+#todo-form {
+    padding: 0 15px !important;
+}
