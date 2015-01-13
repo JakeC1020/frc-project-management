@@ -1,14 +1,16 @@
 class TodosController < ApplicationController
 	before_action :logged_in_user
-	before_action :all_todos, only: [:index, :create, :update, :destroy, :panel]
+	before_action :all_todos, only: [:index, :create, :update, :destroy, :panel, :assigner]
 	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
 
-	before_action :admin_user, only: [:past, :index, :assign]
+	before_action :admin_user, only: [:past, :index, :assign, :assigner]
 	respond_to :html, :js
 
 	def panel 
 		# Main View for all users
 		@todos = current_user.todos
+		
+
 	end
 
 	# Admin Functions
@@ -29,7 +31,16 @@ class TodosController < ApplicationController
 
 	def assign
 		# location to assign todos 
+		@todo = Todo.new
+		users_array = User.all 
+		@users = []
+		users_array.each do |user| 
+			@users.push(["#{convert_user(user.id)}", user.id])
+		end
+	end
 
+	def assigner
+		@todo = Todo.new(todo_params).save
 	end
 
 	# CRUD Actions
@@ -81,6 +92,6 @@ class TodosController < ApplicationController
 	    end
 
 		def todo_params
-			params.require(:todo).permit(:task, :due, :done)			
+			params.require(:todo).permit(:task, :due, :done, :user_id)			
 		end
 end

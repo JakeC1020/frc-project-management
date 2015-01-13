@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   # Todo Admin routes
   get 'past' => 'todos#past'
+  get 'assign' => 'todos#assign'
+  post 'assigner' => 'todos#assigner'
 
 
   # Other Todo routes

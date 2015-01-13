@@ -20,4 +20,10 @@ module SessionsHelper
   def current_user?(user)
     user == current_user
   end
+
+  def convert_user(user_id)
+    user = User.find_by(id: user_id)
+    converted_string = "#{user.first} #{user.last}"
+    return converted_string
+  end
 end
