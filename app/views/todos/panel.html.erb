@@ -1,9 +1,9 @@
 
 	<div class="col-md-12  panel panel-default">
 		<!-- CURRENT TODOS -->
-		<div class="panel-heading row todos-header">
-			<h2>Todo List</h2>
-			<h2 class="add_todo"><%= link_to new_todo_path, remote: true do %>
+		<div class="panel-heading row">
+			<h2><%= link_to "Todo List", todos_path, class: "col-md-10"%></h2>
+			<h2 class="col-md-2 pull-right"><%= link_to new_todo_path, remote: true do %>
 				<i class="fa-plus-square fa fa-lg"></i>
 			<% end %></h2>
 	  </div>
@@ -19,8 +19,8 @@
 
 	<div class="col-md-12 col-xs-12 panel panel-default">
 	<!-- COMPLETED TODOS -->
-		<div class="panel-heading row todos-header">
-			<h2>Finished Todos</h2>
+		<div class="panel-heading row">
+			<h2><%= link_to "Finished Todos", todos_path, class: "col-md-12"%></h2>
 		</div>
 		<div class="panel-body">
 			<div id="donetodos">
