@@ -41,7 +41,7 @@ a i:hover {
     float: right;
 }
 
-.panel-body {
+.panel-body.todo-panel {
     padding: 15px 0 0;
 }
 
