@@ -27,3 +27,24 @@ a i:hover {
 .panel i, .panel span {
 	margin: 0 5px;
 }
+
+.todos-header {
+    padding: 10px 30px;
+}
+
+.todos-header h2 {
+    margin: 4px 0;
+    display: inline-block;
+}
+
+.todos-header h2.add_todo {
+    float: right;
+}
+
+.panel-body {
+    padding: 15px 0 0;
+}
+
+#todo-form {
+    padding: 0 15px !important;
+}
