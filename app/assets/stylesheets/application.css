@@ -45,6 +45,14 @@ a i:hover {
     padding: 15px 0 0;
 }
 
+.panel.todo {
+    margin-bottom: 10px;
+}
+
+.panel.todo .panel-body {
+    padding: 10px 0 8px;
+}
+
 #todo-form {
     padding: 0 15px !important;
 }
