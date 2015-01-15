@@ -40,7 +40,9 @@ class TodosController < ApplicationController
 	end
 
 	def assigner
-		@todo = Todo.new(todo_params).save
+		@todo = Todo.new(todo_params)
+		@todo.due = params[:todo][:due].to_date
+		@todo.save
 	end
 
 	# CRUD Actions

@@ -4,5 +4,5 @@ class Todo < ActiveRecord::Base
   validates :user_id, presence: true
   validates :task, presence: true, length: {maximum: 100}
 
-  default_scope -> { order(due: :desc)}
+  default_scope -> { order(due: :asc)}
 end
