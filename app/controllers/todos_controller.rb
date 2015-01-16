@@ -54,6 +54,8 @@ class TodosController < ApplicationController
 
 	def create
 		# Ajax function
+		@todo = Todo.new(todo_params)
+		@todo.due = params[:todo][:due].to_date
 		@todo = current_user.todos.create(todo_params)
 	end
 
