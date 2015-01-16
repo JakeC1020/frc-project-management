@@ -1,6 +1,6 @@
 module TodosHelper
 	def past_due(date)
-		if Date.today > date
+		if Date.today.in_time_zone > date
 			return true
 		else
 			return false
@@ -8,7 +8,7 @@ module TodosHelper
 	end
 
 	def is_due(date)
-		if Date.today == date
+		if Date.today.in_time_zone == date
 			return true
 		else 
 			return false
