@@ -36,3 +36,27 @@ input::-webkit-calendar-picker-indicator{
 input[type="date"]::-webkit-input-placeholder{ 
     visibility: hidden !important;
 }
+.todos-header h2 {
+    margin: 4px 0;
+    display: inline-block;
+}
+
+.todos-header h2.add_todo {
+    float: right;
+}
+
+.panel-body.todo-panel {
+    padding: 15px 0 0;
+}
+
+.panel.todo {
+    margin-bottom: 10px;
+}
+
+.panel.todo .panel-body {
+    padding: 10px 0 8px;
+}
+
+#todo-form {
+    padding: 0 15px !important;
+}
