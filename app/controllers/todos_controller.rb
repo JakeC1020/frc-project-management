@@ -1,8 +1,8 @@
 class TodosController < ApplicationController
 	before_action :logged_in_user
-	before_action :all_todos, only: [:index, :create, :update, :destroy, :panel, :assigner]
+	before_action :all_todos, only: [:index, :panel, :assigner]
 	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
-
+	before_action :own_todos, only: [:panel, :create, :update, :destroy]
 	before_action :admin_user, only: [:past, :index, :assign, :assigner]
 	respond_to :html, :js
 
@@ -80,6 +80,10 @@ class TodosController < ApplicationController
 
 		def set_todos
 			@todo = Todo.find(params[:id])
+		end
+
+		def own_todos
+			@todos = current_user.todos
 		end
 
 		def logged_in_user
