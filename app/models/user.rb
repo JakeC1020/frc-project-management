@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 		self.last = last.capitalize
 	}
 
-	validates :email, presence: true
+	validates :email, presence: true, uniqueness: true
 	validates_format_of :email, :with => /@/
 	validates :first, presence: true
 	validates :last, presence: true
