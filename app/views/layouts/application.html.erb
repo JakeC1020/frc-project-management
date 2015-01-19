@@ -26,7 +26,10 @@
 			
 			<div class="collapse navbar-collapse navbar-right" id="main-nav">
 				<div class="nav navbar-nav">
+					<li><%= link_to "My To-Dos", root_path %></li>
 					<% if current_user.admin? %>
+						<li><%= link_to "Team To-Dos", todos_path %></li>
+						<li><%= link_to "Past Due", past_path %></li>
 						<li><%= link_to "All Users", users_path %></li>
 					<% end %>
 					<li><%= link_to "Profile", user_path(current_user) %></li>

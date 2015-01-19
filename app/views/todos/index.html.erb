@@ -1,16 +1,31 @@
-
-			<%= link_to assign_path, class: "pull-right", remote: true do %>
-	    	<i class="fa-plus-square fa fa-3x"></i> <br><br>
-	   <% end %>
-	   <br>
-	   <div id="assign-form" style="display:none;"><br></div>
-	   <br>
-  </div>
-
-
-
-
-	<div id="todos">
-		<%= render 'todo' %>
+	<div class="col-md-12  panel panel-default">
+		<!-- CURRENT TODOS -->
+		<div class="panel-heading row">
+			<h2><%= link_to "Team To-Do List", todos_path, class: "col-md-10"%></h2>
+			<h2 class="col-md-2 pull-right"><%= link_to assign_path, remote: true do %>
+				<i class="fa-plus-square fa fa-lg"></i>
+			<% end %></h2>
+	  </div>
+		<div class="panel-body todo-panel">
+			<div id="assign-form" style="display:none;"><br></div>
+			<div id="todos">
+				<%= render 'todo' %>
+			</div>
+		</div>
 	</div>
+
+
+
+	<div class="col-md-12 col-xs-12 panel panel-default">
+	<!-- COMPLETED TODOS -->
+		<div class="panel-heading row">
+			<h2><%= link_to "Finished To-Dos", todos_path, class: "col-md-12"%></h2>
+		</div>
+		<div class="panel-body todo-panel">
+			<div id="donetodos">
+				<%= render 'donetodo' %>
+			</div>
+		</div>
+	</div>
+
 </div>

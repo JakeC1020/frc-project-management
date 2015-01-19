@@ -7,6 +7,7 @@
 			<%= todo.task %>
 			
 			<div class="pull-right">
+			<span><%= todo.user.first %> <%= todo.user.last %></span>
 			<%= todo.due.strftime("%m/%d/%Y") %>&nbsp;
 				<%= link_to edit_todo_path(todo), remote: true do %>
 				    <i class="fa fa-pencil fa-lg"></i>
