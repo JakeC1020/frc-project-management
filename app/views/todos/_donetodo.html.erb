@@ -1,3 +1,4 @@
+
 <% @todos.each do |todo| %>
 	<% if todo.done? %>
 	<div class="panel panel-default col-md-12 todo">
@@ -18,3 +19,23 @@
 	</div>
 	<% end %>
 <% end %>
+<script type="text/javascript">
+  $(".un-checked").on("click", function(event){
+    $(this).removeClass("fa-square-o un-checked").addClass("fa-check-square-o checked")
+    var id = $(this).attr("id");
+    $.ajax({
+      url: '/todos/'+id+'/',
+      type: 'PUT',
+      data: {"todo" : {"done": true}}
+    });
+  });
+
+  $(".checked").on("click", function(event){
+    $(this).removeClass("fa-check-square-o checked").addClass("fa-square-o un-checked")
+    var id = $(this).attr("id");
+    $.ajax({
+      url: '/todos/'+id+'/',
+      type: 'PUT',
+      data: {"todo" : {"done": false}}
+    });
+  });
