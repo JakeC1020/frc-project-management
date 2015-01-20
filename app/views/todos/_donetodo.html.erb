@@ -1,5 +1,6 @@
 <% @todos.each do |todo| %>
 	<% if todo.done? %>
+    <!-- DONE TODO PANEL  -->
 	<div class="panel panel-default col-md-12 todo">
 		<div class="panel-body">
 		<a href="#"><i class="fa fa-check-square-o fa-lg checked" id="<%= todo.id %>"></i></a> &nbsp;
