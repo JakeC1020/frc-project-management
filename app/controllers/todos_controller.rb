@@ -9,8 +9,6 @@ class TodosController < ApplicationController
 	def panel 
 		# Main View for all users
 		@todos = current_user.todos
-		
-
 	end
 
 	# Admin Functions
