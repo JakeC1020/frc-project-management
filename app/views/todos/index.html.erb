@@ -1,7 +1,7 @@
 	<div class="col-md-12  panel panel-default">
 		<!-- CURRENT TODOS -->
-		<div class="panel-heading row">
-			<h2><%= link_to "Team To-Do List", todos_path, class: "col-md-10"%></h2>
+		<div class="panel-heading row todos-header">
+			<h2><%= link_to "Team To-Dos", todos_path, class: ""%></h2>
 			<h2 class="col-md-2 pull-right"><%= link_to assign_path, remote: true do %>
 				<i class="fa-plus-square fa fa-lg"></i>
 			<% end %></h2>
@@ -18,7 +18,7 @@
 
 	<div class="col-md-12 col-xs-12 panel panel-default">
 	<!-- COMPLETED TODOS -->
-		<div class="panel-heading row">
+		<div class="panel-heading row todos-header">
 			<h2><%= link_to "Finished To-Dos", todos_path, class: "col-md-12"%></h2>
 		</div>
 		<div class="panel-body todo-panel">
