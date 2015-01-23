@@ -1,28 +1,28 @@
-== README
+== FRC Project Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project managemeny system designed for FRC Team 1245 for the 2015 Season. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use this system to track the team's actions, see what tasks are past due, and have a centralized contact list.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+#Things you may want to cover: 
+
+#* Ruby version
+
+#* System dependencies
+
+#* Configuration
+
+#* Database creation
+
+#* Database initialization
+
+#* How to run the test suite
+
+#* Services (job queues, cache servers, search engines, etc.)
+
+#* Deployment instructions
+
+#* ...
+
