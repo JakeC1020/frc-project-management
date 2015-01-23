@@ -5,24 +5,3 @@ This is a project managemeny system designed for FRC Team 1245 for the 2015 Seas
 Use this system to track the team's actions, see what tasks are past due, and have a centralized contact list.
 
 
-
-#Things you may want to cover: 
-
-#* Ruby version
-
-#* System dependencies
-
-#* Configuration
-
-#* Database creation
-
-#* Database initialization
-
-#* How to run the test suite
-
-#* Services (job queues, cache servers, search engines, etc.)
-
-#* Deployment instructions
-
-#* ...
-
