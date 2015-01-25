@@ -1,34 +1,29 @@
+<div class="col-md-12 panel panel-default">
 
-	<div class="col-md-12  panel panel-default">
+  <div class="panel-heading row todos-header">
+    <h2><%= link_to "My To-Dos", todos_path %></h2>
+    <h2 class="add_todo">
+      <%= link_to new_todo_path, remote: true do %>
+        <i class="fa-plus-square fa fa-lg"></i>
+      <% end %>
+    </h2>
+  </div>
+  
+  <div class="panel-body todo-panel">
+    <div id="todo-form" style="display: none;"><br></div>
+    <div id="todos"><%= render 'todo' %></div>
+  </div>
+  
+</div>
 
-		<!-- CURRENT TODOS  -->
-		<div class="panel-heading row todos-header">
-			<h2><%= link_to "My To-Dos", todos_path, class: "col-md-12"%></h2>
-			<h2 class="add_todo"><%= link_to new_todo_path, remote: true do %>
+<div class="col-md-12 col-xs-12 panel panel-default">
 
-				<i class="fa-plus-square fa fa-lg"></i>
-			<% end %></h2>
-	  </div>
-		<div class="panel-body todo-panel">
-			<div id="todo-form" style="display:none;"><br></div>
-			<div id="todos">
-				<%= render 'todo' %>
-			</div>
-		</div>
-	</div>
+  <div class="panel-heading row todos-header">
+    <h2><%= link_to "Finished To-Dos", todos_path %></h2>
+  </div>
 
-
-
-	<div class="col-md-12 col-xs-12 panel panel-default">
-	<!-- COMPLETED TODOS -->
-		<div class="panel-heading row todos-header">
-			<h2><%= link_to "Finished To-Dos", todos_path, class: "col-md-12"%></h2>
-		</div>
-		<div class="panel-body todo-panel">
-			<div id="donetodos">
-				<%= render 'donetodo' %>
-			</div>
-		</div>
-	</div>
+  <div class="panel-body todo-panel">
+    <div id="donetodos"><%= render 'donetodo' %></div>
+  </div>
 
 </div>
