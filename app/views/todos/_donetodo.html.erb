@@ -1,45 +1,27 @@
-
 <% @todos.each do |todo| %>
-	<% if todo.done? %>
-    <!-- DONE TODO PANEL  -->
-	<div class="panel panel-default col-md-12 todo">
-		<div class="panel-body">
-		<a href="#"><i class="fa fa-check-square-o fa-lg checked" id="<%= todo.id %>"></i></a> &nbsp;
-			<%= todo.task %>
-			
-			<div class="pull-right">
-			<span><%= todo.user.first %> <%= todo.user.last %></span>
-			<%= todo.due.strftime("%m/%d/%Y") %>&nbsp;
-				<%= link_to edit_todo_path(todo), remote: true do %>
-				    <i class="fa fa-pencil fa-lg"></i>
-			  <% end %>
-			  <%= link_to todo, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
-			  	<i class="fa fa-trash fa-lg"></i>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	<% end %>
+  <% if todo.done? %>
+  
+    <div class="panel panel-default col-md-12 todo">
+      <div class="panel-body">
+        
+        <a href="#"><i class="fa fa-check-square-o fa-lg checked" id="<%= todo.id %>"></i></a>
+        <%= todo.task %>
+        
+        <div class="pull-right">
+          <span><%= todo.user.first %> <%= todo.user.last %></span>
+          <%= todo.due.strftime("%m/%d/%Y") %>
+          
+          <%= link_to edit_todo_path(todo), remote: true do %>
+            <i class="fa fa-pencil fa-lg"></i>
+          <% end %>
+          
+          <%= link_to todo, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash fa-lg"></i>
+          <% end %>
+        </div>
+        
+      </div>
+    </div>
+  
+  <% end %>
 <% end %>
-<script type="text/javascript">
-  $(".un-checked").on("click", function(event){
-    $(this).removeClass("fa-square-o un-checked").addClass("fa-check-square-o checked")
-    var id = $(this).attr("id");
-    $.ajax({
-      url: '/todos/'+id+'/',
-      type: 'PUT',
-      data: {"todo" : {"done": true}}
-    });
-  });
-
-  $(".checked").on("click", function(event){
-    $(this).removeClass("fa-check-square-o checked").addClass("fa-square-o un-checked")
-    var id = $(this).attr("id");
-    $.ajax({
-      url: '/todos/'+id+'/',
-      type: 'PUT',
-      data: {"todo" : {"done": false}}
-    });
-  });
-
-</script>

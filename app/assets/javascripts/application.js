@@ -16,9 +16,3 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
-function select_datepicker () {
-    $("#datepicker").addClass("black").datepicker();
-    console.log("Picked");
-}
- 
