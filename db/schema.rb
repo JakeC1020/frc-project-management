@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108183112) do
+ActiveRecord::Schema.define(version: 20150122190255) do
 
   create_table "todos", force: true do |t|
     t.text     "task"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150108183112) do
     t.datetime "updated_at"
     t.string   "phone"
     t.boolean  "admin",           default: false
+    t.boolean  "head",            default: false
   end
 
 end

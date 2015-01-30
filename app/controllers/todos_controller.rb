@@ -3,7 +3,8 @@ class TodosController < ApplicationController
 	before_action :all_todos, only: [:index, :panel, :assigner]
 	before_action :set_todos, only: [:edit, :update, :toggle, :destroy]
 	before_action :own_todos, only: [:panel, :create, :update, :destroy]
-	before_action :admin_user, only: [:past, :index, :assign, :assigner]
+	before_action :assigning_user, only: [:past, :index, :assign, :assigner]
+
 	respond_to :html, :js
 
 	def panel 
@@ -91,8 +92,8 @@ class TodosController < ApplicationController
 	      end
 	    end
 
-	    def admin_user
-	    	unless current_user.admin?
+	    def assigning_user
+	    	unless current_user.admin? || current_user.head?
 	    		redirect_to(root_url)
 	    	end
 	    end
