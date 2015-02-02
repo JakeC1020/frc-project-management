@@ -71,7 +71,7 @@ class TodosController < ApplicationController
 
 	private 
 		def all_todos
-			if current_user.admin?
+			if current_user.admin? || current_user.head?
 				@todos = Todo.all
 			else
 				@todos = current_user.todos
