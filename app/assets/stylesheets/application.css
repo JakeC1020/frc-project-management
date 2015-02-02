@@ -57,6 +57,6 @@ input[type="date"]::-webkit-input-placeholder{
     padding: 10px 0 8px;
 }
 
-#todo-form {
+#todo-form, #assign-form {
     padding: 0 15px !important;
 }
