@@ -9,6 +9,10 @@
         <% if past_due(todo.due) then style = "text-danger" elsif is_due(todo.due) then style = "text-warning" else style="text-primary" end %>
         
         <div class="pull-right">
+          
+          <% if todo.who %>
+          <span>Assigned by: <%= convert_user(todo.who) %></span>
+          <% end %>
           <span><%= todo.user.first %> <%= todo.user.last %></span>
           <span class="<%= style %>"><%= todo.due.strftime("%m/%d/%Y") %></span>
           

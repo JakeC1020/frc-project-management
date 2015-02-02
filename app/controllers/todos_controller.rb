@@ -41,6 +41,7 @@ class TodosController < ApplicationController
 	def assigner
 		@todo = Todo.new(todo_params)
 		@todo.due = params[:todo][:due].to_date.in_time_zone
+		@todo.who = current_user
 		@todo.save
 	end
 
