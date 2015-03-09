@@ -24,6 +24,12 @@ class TodosController < ApplicationController
 		end	
 	end
 
+	def season
+		# List of all todos 
+		@todos = Todo.reorder(updated_at: :asc)
+		
+	end
+
 	def index
 		# Simply all todos for everyone
 	end

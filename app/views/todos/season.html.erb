@@ -1,0 +1,23 @@
+<h1>2015 Work Tracking</h1>
+<table class="table">
+<tr>
+	
+	<th>Team Member</th>
+	<th>What got Accomplished</th>
+	<th>Due Date</th>
+	<th>Actual Date Completed</th>
+
+</tr>
+<% @todos.each do |todo| %>
+	<tr>
+		
+		<td><%=todo.user.first  %> <%= todo.user.last %></td>
+		<td><%=todo.task %></td>
+		<td><%=todo.due.strftime("%B %d, %Y") %></td>
+		<td><%= todo.updated_at.strftime("%B %d, %Y") %></td>
+	</tr>
+
+
+
+<% end %>
+</table>

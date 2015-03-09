@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'past' => 'todos#past'
   get 'assign' => 'todos#assign'
   post 'assigner' => 'todos#assigner'
+  get 'season' => 'todos#season'
 
 
   # Other Todo routes
